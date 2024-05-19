@@ -44,6 +44,10 @@ app.use(express.json());
 //ACTIVACIÓN DE CORS
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
+
 //CONFIGURACIÓN DE SERVIDOR
 app.listen({ port: process.env.PORT || 4000 }, async () => {
   await conectarBD();
